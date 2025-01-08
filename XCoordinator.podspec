@@ -1,17 +1,25 @@
 Pod::Spec.new do |spec|
     spec.name         = 'XCoordinator'
-    spec.version      = '2.2.1'
+    spec.version      = '2.3.0'
     spec.license      = { :type => 'MIT' }
-    spec.homepage     = 'https://github.com/quickbirdstudios/XCoordinator'
+    spec.homepage     = 'https://github.com/gismart/GLXCoordinator.git'
     spec.authors      = { 'Stefan Kofler' => 'stefan.kofler@quickbirdstudios.com', 'Paul Kraft' => 'pauljohannes.kraft@quickbirdstudios.com' }
     spec.summary      = 'Navigation framework based on coordinator pattern.'
-    spec.source       = { :git => 'https://github.com/quickbirdstudios/XCoordinator.git', :tag => spec.version }
+    spec.source       = { :git => 'git@github.com:gismart/GLXCoordinator.git', :tag => spec.version }
     spec.module_name = 'XCoordinator'
-    spec.swift_version = '5.1'
-    spec.ios.deployment_target = '9.0'
-    spec.tvos.deployment_target = '9.0'
+    spec.swift_version = '6.2'
+    spec.ios.deployment_target = '16.0'
     spec.source_files = 'Sources/XCoordinator/*.swift'
     spec.default_subspec = 'Core'
+
+    spec.pod_target_xcconfig = {
+      'SWIFT_APPROACHABLE_CONCURRENCY' => 'YES',
+      'SWIFT_DEFAULT_ACTOR_ISOLATION' => 'MainActor',
+      'OTHER_SWIFT_FLAGS' => [
+        '-enable-upcoming-feature NonisolatedNonsendingByDefault',
+        '-enable-upcoming-feature InferIsolatedConformances'
+      ].join(' ')
+    }
 
     spec.subspec 'Core' do |ss|
         ss.source_files = 'Sources/XCoordinator/*.swift'
