@@ -18,6 +18,7 @@ import UIKit
 ///
 ///     Make sure to hold a strong reference to the `Animation` object, as it is only held by a weak reference.
 ///
+@MainActor
 open class Animation: NSObject {
 
     // MARK: Static properties

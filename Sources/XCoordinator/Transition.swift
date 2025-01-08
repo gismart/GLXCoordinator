@@ -23,6 +23,7 @@ import UIKit
 ///     Make sure to specify the `RootViewController` type of the `TransitionType` of your coordinator as precise as possible
 ///     to get all already available transitions.
 ///
+@MainActor
 public struct Transition<RootViewController: UIViewController>: TransitionProtocol {
 
     // MARK: Typealias
