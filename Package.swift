@@ -1,11 +1,11 @@
-// swift-tools-version:5.1
+// swift-tools-version: 6.2
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "XCoordinator",
-    platforms: [.iOS(.v9), .tvOS(.v9)],
+    platforms: [.iOS(.v16), .tvOS(.v12)],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
@@ -40,3 +40,13 @@ let package = Package(
             dependencies: ["XCoordinator", "XCoordinatorRx"]),
     ]
 )
+
+for target in package.targets {
+  var settings = target.swiftSettings ?? []
+  settings.append(contentsOf: [
+    .defaultIsolation(MainActor.self),
+    .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
+    .enableUpcomingFeature("InferIsolatedConformances")
+  ])
+  target.swiftSettings = settings
+}

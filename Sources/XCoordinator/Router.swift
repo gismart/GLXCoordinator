@@ -127,7 +127,7 @@ extension Router {
     /// - Parameters:
     ///     - route: The route to be triggered.
     ///
-    @MainActor public func trigger(_ route: RouteType) async {
+    public func trigger(_ route: RouteType) async {
         await trigger(route, with: .default)
     }
 
@@ -138,7 +138,7 @@ extension Router {
     ///     - route: The route to be triggered.
     ///     - options: Transition options for performing the transition, e.g. whether it should be animated.
     ///
-    @MainActor public func trigger(_ route: RouteType, with options: TransitionOptions) async {
+    public func trigger(_ route: RouteType, with options: TransitionOptions) async {
         _ = await contextTrigger(route, with: options)
     }
 
@@ -159,7 +159,7 @@ extension Router {
     ///     The transition context of the performed transition(s).
     ///     If the context is not needed, use `trigger` instead.
     ///
-    @MainActor public func contextTrigger(_ route: RouteType, with options: TransitionOptions) async -> TransitionContext {
+    public func contextTrigger(_ route: RouteType, with options: TransitionOptions) async -> TransitionContext {
         await withCheckedContinuation { continuation in
             contextTrigger(route, with: options) { context in
                 continuation.resume(returning: context)
