@@ -107,7 +107,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 ## 🤸‍♂️ Extras
 
-For more advanced use, XCoordinator offers many more customization options. We introduce custom animated transitions and deep linking. Furthermore, extensions for use in reactive programming with RxSwift/Combine and options to split up huge routes are described.
+For more advanced use, XCoordinator offers many more customization options. We introduce custom animated transitions and deep linking. Furthermore, extensions for use in reactive programming with Combine and options to split up huge routes are described.
 
 ### 🌗 Custom Transitions
 
@@ -219,36 +219,6 @@ We suggest to not use initial routes in the initializers of sibling coordinators
 
 ⚠️ If you perform transitions involving a sibling coordinator directly (e.g. pushing a sibling coordinator without overriding its `viewController` property), your app will most likely crash.
 
-### 🚀 RxSwift/Combine extensions
-
-Reactive programming can be very useful to keep the state of view and model consistent in a MVVM architecture. Instead of relying on the completion handler of the `trigger` method available in any `Router`, you can also use our RxSwift-extension. In the example application, we use Actions (from the [Action](https://github.com/RxSwiftCommunity/Action) framework) to trigger routes on certain UI events - e.g. to trigger `LoginRoute.home` in `LoginViewModel`, when the login button is tapped.
-
-```swift
-class LoginViewModelImpl: LoginViewModel, LoginViewModelInput, LoginViewModelOutput {
-
-    private let router: UnownedRouter<AppRoute>
-
-    private lazy var loginAction = CocoaAction { [unowned self] in
-        return self.router.rx.trigger(.home)
-    }
-
-    /* ... */
-}
-
-```
-
-In addition to the above-mentioned approach, the reactive `trigger` extension can also be used to sequence different transitions by using the `flatMap` operator, as can be seen in the following:
-
-```swift
-let doneWithBothTransitions = 
-    router.rx.trigger(.home)
-        .flatMap { [unowned self] in self.router.rx.trigger(.news) }
-        .map { true }
-        .startWith(false)
-```
-
-When using `XCoordinator` with the `Combine` extensions, you can use `router.publishers.trigger` instead of `router.rx.trigger`.
-
 ## 📚 Documentation & Example app
 
 To get more information about XCoordinator, check out the [documentation](https://quickbirdeng.github.io/XCoordinator/).
@@ -327,13 +297,6 @@ To integrate XCoordinator into your Xcode project using CocoaPods, add this to y
 
 ```ruby
 pod 'XCoordinator', '~> 2.0'
-```
-
-To use the RxSwift extensions, add this to your `Podfile`:
-
-```ruby
-pod 'XCoordinator/RxSwift', '~> 2.0'
-```
 
 To use the Combine extensions, add this to your `Podfile`:
 
@@ -359,7 +322,7 @@ See [this WWDC presentation](https://developer.apple.com/videos/play/wwdc2019/40
 
 Specify `https://github.com/quickbirdstudios/XCoordinator.git` as the `XCoordinator` package link. 
 You can then decide between three different frameworks, i.e. `XCoordinator`, `XCoordinatorRx` and `XCoordinatorCombine`. 
-While `XCoordinator` contains the main framework, you can choose `XCoordinatorRx` or `XCoordinatorCombine` to get `RxSwift` or `Combine` extensions as well.
+While `XCoordinator` contains the main framework, you can choose `XCoordinatorCombine` to get `Combine` extension as well.
 
 #### Manually
 
