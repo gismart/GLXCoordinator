@@ -21,6 +21,7 @@ public typealias BasicTabBarCoordinator<R: Route> = BasicCoordinator<R, TabBarTr
 /// Although subclassing of coordinators is encouraged for more complex cases, a `BasicCoordinator` can easily
 /// be created by only providing a `prepareTransition` closure, an `initialRoute` and an `initialLoadingType`.
 ///
+@MainActor
 open class BasicCoordinator<RouteType: Route, TransitionType: TransitionProtocol>: BaseCoordinator<RouteType, TransitionType> {
 
     // MARK: Nested types

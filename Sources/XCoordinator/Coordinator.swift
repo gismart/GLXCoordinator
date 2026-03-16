@@ -9,10 +9,10 @@
 import UIKit
 
 /// The completion handler for transitions.
-public typealias PresentationHandler = () -> Void
+public typealias PresentationHandler = @MainActor () -> Void
 
 /// The completion handler for transitions, which also provides the context information about the transition.
-public typealias ContextPresentationHandler = (TransitionContext) -> Void
+public typealias ContextPresentationHandler = @MainActor (TransitionContext) -> Void
 
 ///
 /// Coordinator is the protocol every coordinator conforms to.
@@ -20,6 +20,7 @@ public typealias ContextPresentationHandler = (TransitionContext) -> Void
 /// It requires an object to be able to trigger routes and perform transitions.
 /// This connection is created using the `prepareTransition(for:)` method.
 ///
+@MainActor
 public protocol Coordinator: Router, TransitionPerformer {
 
     ///

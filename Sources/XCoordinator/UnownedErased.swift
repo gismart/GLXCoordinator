@@ -16,6 +16,7 @@ import Foundation
 /// Make sure to not create an `UnownedErased` wrapper for already type-erased objects,
 /// since their reference is most likely instantly lost.
 ///
+@MainActor
 @propertyWrapper
 public struct UnownedErased<Value> {
     private var _value: () -> Value
@@ -35,6 +36,7 @@ public struct UnownedErased<Value> {
 /// Make sure to not create an `UnownedErased` wrapper for already type-erased objects,
 /// since their reference is most likely instantly lost.
 ///
+@MainActor
 public struct UnownedErased<Value> {
     private var _value: () -> Value
     

@@ -15,6 +15,7 @@ import UIKit
 /// NavigationCoordinator especially ensures that transition animations are called,
 /// which would not be the case when creating a `BaseCoordinator<RouteType, NavigationTransition>`.
 ///
+@MainActor
 open class NavigationCoordinator<RouteType: Route>: BaseCoordinator<RouteType, NavigationTransition> {
 
     // MARK: Stored properties

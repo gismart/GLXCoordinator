@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 extension UIPageViewController {
     func set(_ viewControllers: [UIViewController],
              direction: UIPageViewController.NavigationDirection,

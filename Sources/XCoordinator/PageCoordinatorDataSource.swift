@@ -17,6 +17,7 @@ import UIKit
 /// When the user navigates beyond the end of the specified pages, the pages are wrapped around by displaying the first page.
 /// In analogy to that, it also wraps to the last page when navigating beyond the beginning.
 ///
+@MainActor
 open class PageCoordinatorDataSource: NSObject, UIPageViewControllerDataSource {
 
     // MARK: Stored properties

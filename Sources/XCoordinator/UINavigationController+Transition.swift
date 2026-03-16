@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 extension UINavigationController {
     
     func push(_ viewController: UIViewController,

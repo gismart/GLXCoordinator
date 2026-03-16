@@ -14,6 +14,7 @@ import UIKit
 /// With the Container protocol, `UIView` and `UIViewController` objects can be used interchangeably,
 /// e.g. when embedding containers into containers.
 ///
+@MainActor
 public protocol Container {
 
     ///

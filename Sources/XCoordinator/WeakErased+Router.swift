@@ -19,6 +19,7 @@ import UIKit
 ///
 public typealias WeakRouter<RouteType: Route> = WeakErased<StrongRouter<RouteType>>
 
+@MainActor
 extension WeakErased: Presentable where Value: Presentable {
 
     public var viewController: UIViewController! {
@@ -43,6 +44,7 @@ extension WeakErased: Presentable where Value: Presentable {
 
 }
 
+@MainActor
 extension WeakErased: Router where Value: Router {
 
     public func contextTrigger(_ route: Value.RouteType, with options: TransitionOptions, completion: ContextPresentationHandler?) {

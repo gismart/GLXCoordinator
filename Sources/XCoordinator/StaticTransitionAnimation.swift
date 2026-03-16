@@ -17,6 +17,7 @@ import UIKit
 ///     interactive, if your animation code does not fulfill the requirements of an interactive transition
 ///     animation.
 ///
+@MainActor
 open class StaticTransitionAnimation: NSObject, TransitionAnimation {
 
     // MARK: Stored properties

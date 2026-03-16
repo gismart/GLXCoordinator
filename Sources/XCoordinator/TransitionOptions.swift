@@ -14,6 +14,7 @@
 /// - Note:
 ///     It might be extended in the future to enable more advanced customization options.
 ///
+@MainActor
 public struct TransitionOptions {
 
     // MARK: Stored properties

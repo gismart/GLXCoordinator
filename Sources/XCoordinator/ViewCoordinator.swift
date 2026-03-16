@@ -16,6 +16,7 @@ public typealias ViewTransition = Transition<UIViewController>
 ///
 /// ViewCoordinator is a base class for custom coordinators with a `UIViewController` rootViewController.
 ///
+@MainActor
 open class ViewCoordinator<RouteType: Route>: BaseCoordinator<RouteType, ViewTransition> {
 
     // MARK: Initialization

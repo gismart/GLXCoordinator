@@ -19,6 +19,7 @@ import UIKit
 ///     Do not override the delegate of a NavigationCoordinator's rootViewController.
 ///     Instead use the delegate property of the NavigationCoordinator itself.
 ///
+@MainActor
 open class NavigationAnimationDelegate: NSObject {
 
     // MARK: Static properties
@@ -277,6 +278,7 @@ extension NavigationAnimationDelegate: UIGestureRecognizerDelegate {
 
 #endif
 
+@MainActor
 extension UINavigationController {
     internal var animationDelegate: NavigationAnimationDelegate? {
         delegate as? NavigationAnimationDelegate

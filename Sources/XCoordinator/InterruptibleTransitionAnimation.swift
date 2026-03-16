@@ -13,6 +13,7 @@ import UIKit
 /// APIs introduced in iOS 10.
 ///
 @available(iOS 10.0, tvOS 10.0, *)
+@MainActor
 open class InterruptibleTransitionAnimation: InteractiveTransitionAnimation {
 
     // MARK: Stored properties

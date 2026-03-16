@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 internal class CoordinatorPreviewingDelegateObject<TransitionType: TransitionProtocol>:
 NSObject, UIViewControllerPreviewingDelegate {
 

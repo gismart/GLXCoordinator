@@ -12,14 +12,6 @@ Pod::Spec.new do |spec|
     spec.source_files = 'Sources/XCoordinator/*.swift'
     spec.default_subspec = 'Core'
 
-    # Workaround: Swift 6.2 inliner can crash with MainActor default isolation (EarlyPerfInliner on
-    # AnyCoordinator deinit). Building this pod without optimization avoids the crash.
-    spec.pod_target_xcconfig = {
-      'SWIFT_APPROACHABLE_CONCURRENCY' => 'YES',
-      'SWIFT_DEFAULT_ACTOR_ISOLATION' => 'MainActor',
-      'SWIFT_OPTIMIZATION_LEVEL' => '-Onone'
-    }
-
     spec.subspec 'Core' do |ss|
         ss.source_files = 'Sources/XCoordinator/*.swift'
         ss.framework  = 'UIKit'

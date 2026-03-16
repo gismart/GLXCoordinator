@@ -11,10 +11,12 @@
 import Combine
 import XCoordinator
 
+@MainActor
 public struct PublisherExtension<Base> {
     public let base: Base
 }
 
+@MainActor
 extension Router {
 
     public var publishers: PublisherExtension<Self> {
@@ -36,6 +38,7 @@ extension Router {
 }
 
 @available(iOS 13.0, tvOS 13.0, *)
+@MainActor
 extension PublisherExtension where Base: Router {
 
     public func trigger(

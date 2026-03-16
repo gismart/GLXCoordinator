@@ -8,8 +8,9 @@
 
 import UIKit
 
-private var associatedObjectHandle: UInt8 = 0
+@MainActor private var associatedObjectHandle: UInt8 = 0
 
+@MainActor
 extension UIView {
 
     var strongReferences: [Any] {
@@ -22,6 +23,7 @@ extension UIView {
     }
 }
 
+@MainActor
 extension UIView {
 
     @discardableResult

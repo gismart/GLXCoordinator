@@ -14,6 +14,7 @@ import UIKit
 /// - Note:
 ///     PageCoordinator sets the dataSource of the rootViewController to reflect the parameters in the initializer.
 ///
+@MainActor
 open class PageCoordinator<RouteType: Route>: BaseCoordinator<RouteType, PageTransition> {
 
     // MARK: Stored properties

@@ -7,10 +7,12 @@
 
 import UIKit
 
+@MainActor
 internal protocol GestureRecognizerTarget {
     var gestureRecognizer: UIGestureRecognizer? { get }
 }
 
+@MainActor
 internal class Target<GestureRecognizer: UIGestureRecognizer>: GestureRecognizerTarget {
 
     // MARK: Stored properties

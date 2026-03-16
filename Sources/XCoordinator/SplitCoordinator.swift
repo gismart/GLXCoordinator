@@ -16,6 +16,7 @@
 
 import UIKit
 
+@MainActor
 open class SplitCoordinator<RouteType: Route>: BaseCoordinator<RouteType, SplitTransition> {
 
     // MARK: Initialization

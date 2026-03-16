@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 extension BaseCoordinator {
     /// Shortcut for `BaseCoordinator.TransitionType.RootViewController`
     public typealias RootViewController = TransitionType.RootViewController
@@ -20,6 +21,7 @@ extension BaseCoordinator {
 /// `NavigationCoordinator`, `TabBarCoordinator`, `ViewCoordinator`, `SplitCoordinator`
 /// and `PageCoordinator`.
 ///
+@MainActor
 open class BaseCoordinator<RouteType: Route, TransitionType: TransitionProtocol>: Coordinator {
 
     // MARK: Stored properties
@@ -143,6 +145,7 @@ extension Presentable {
 
 }
 
+@MainActor
 extension UIViewController {
 
     fileprivate var isInViewHierarchy: Bool {

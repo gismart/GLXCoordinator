@@ -12,6 +12,7 @@
 /// It is especially useful for deep linking as XCoordinator can internally gather information about
 /// the presentables being pushed onto the view hierarchy.
 ///
+@MainActor
 public protocol TransitionContext: Sendable {
 
     /// The presentables being shown to the user by the transition.

@@ -8,6 +8,7 @@
 
 import UIKit
 
+@MainActor
 extension UITabBarController {
     
     func set(_ viewControllers: [UIViewController],

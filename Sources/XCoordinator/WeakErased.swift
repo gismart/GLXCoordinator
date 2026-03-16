@@ -17,6 +17,7 @@ import Foundation
 /// Make sure to not create a `WeakErased` wrapper for already type-erased objects,
 /// since their reference is most likely instantly lost.
 ///
+@MainActor
 @propertyWrapper
 public struct WeakErased<Value> {
     private var _value: () -> Value?
@@ -36,6 +37,7 @@ public struct WeakErased<Value> {
 /// Make sure to not create a `WeakErased` wrapper for already type-erased objects,
 /// since their reference is most likely instantly lost.
 ///
+@MainActor
 public struct WeakErased<Value> {
     private var _value: () -> Value?
     

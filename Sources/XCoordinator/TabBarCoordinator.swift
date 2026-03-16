@@ -12,6 +12,7 @@ import UIKit
 /// Use a TabBarCoordinator to coordinate a flow where a `UITabbarController` serves as a rootViewController.
 /// With a TabBarCoordinator, you get access to all tabbarController-related transitions.
 ///
+@MainActor
 open class TabBarCoordinator<RouteType: Route>: BaseCoordinator<RouteType, TabBarTransition> {
 
     // MARK: Stored properties

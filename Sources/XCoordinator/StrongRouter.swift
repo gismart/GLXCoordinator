@@ -20,6 +20,7 @@ import UIKit
 ///     Use `UnownedRouter` or `WeakRouter` in your view controllers or view models instead.
 ///     You can create them using the `Coordinator.unownedRouter` and `Coordinator.weakRouter` properties.
 ///
+@MainActor
 public final class StrongRouter<RouteType: Route>: Router {
 
     // MARK: Stored properties

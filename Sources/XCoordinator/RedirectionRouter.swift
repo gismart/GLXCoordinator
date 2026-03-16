@@ -19,6 +19,7 @@ import UIKit
 /// A RedirectionRouter has a viewController which is used in transitions,
 /// e.g. when you are presenting, pushing, or otherwise displaying it.
 ///
+@MainActor
 open class RedirectionRouter<ParentRoute: Route, RouteType: Route>: Router {
 
     // MARK: Stored properties

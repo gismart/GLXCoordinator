@@ -19,6 +19,7 @@ import UIKit
 ///     Do not override the delegate of a TabBarCoordinator's rootViewController-delegate.
 ///     Instead use the delegate property of the TabBarCoordinator itself.
 ///
+@MainActor
 open class TabBarAnimationDelegate: NSObject {
 
     // MARK: Stored properties
@@ -153,6 +154,7 @@ extension TabBarAnimationDelegate: UITabBarControllerDelegate {
 
 }
 
+@MainActor
 extension UITabBarController {
     internal var animationDelegate: TabBarAnimationDelegate? {
         delegate as? TabBarAnimationDelegate

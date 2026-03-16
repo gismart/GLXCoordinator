@@ -23,6 +23,7 @@ import UIKit
 ///     [UIViewControllerContextTransitioning](https://developer.apple.com/documentation/uikit/UIViewControllerContextTransitioning) and
 ///     [UIPercentDrivenInteractiveTransition](https://developer.apple.com/documentation/uikit/UIPercentDrivenInteractiveTransition).
 ///
+@MainActor
 open class InteractiveTransitionAnimation: NSObject, TransitionAnimation { // swiftlint:enable line_length
 
     // MARK: Static properties

@@ -14,6 +14,7 @@ import UIKit
 /// XCoordinator provides different implementations of this protocol with the `StaticTransitionAnimation`,
 /// `InteractiveTransitionAnimation` and `InterruptibleTransitionAnimation` classes.
 ///
+@MainActor
 public protocol TransitionAnimation: UIViewControllerAnimatedTransitioning {
 
     ///
@@ -45,6 +46,7 @@ public protocol TransitionAnimation: UIViewControllerAnimatedTransitioning {
 ///     While you can implement your custom implementation,
 ///     UIKit offers a default implementation with `UIPercentDrivenInteractiveTransition`.
 ///
+@MainActor
 public protocol PercentDrivenInteractionController: UIViewControllerInteractiveTransitioning {
 
     ///
@@ -67,4 +69,4 @@ public protocol PercentDrivenInteractionController: UIViewControllerInteractiveT
 
 }
 
-extension UIPercentDrivenInteractiveTransition: PercentDrivenInteractionController {}
+@MainActor extension UIPercentDrivenInteractiveTransition: PercentDrivenInteractionController {}
