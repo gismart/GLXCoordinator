@@ -29,7 +29,13 @@ let package = Package(
         ),
         .target(
             name: "XCoordinatorCombine",
-            dependencies: ["XCoordinator"]),
+            dependencies: ["XCoordinator"],
+            swiftSettings: [
+                .defaultIsolation(MainActor.self),
+                .enableUpcomingFeature("NonisolatedNonsendingByDefault"),
+                .enableUpcomingFeature("InferIsolatedConformances")
+              ]
+        ),
         .testTarget(
             name: "XCoordinatorTests",
             dependencies: ["XCoordinator"]),
